@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Vue from 'vue'
 import App from './App.vue'
 import { upload,alert } from 'element-ui'
@@ -14,7 +15,7 @@ import {
   Form, FormItem, Input, Select, Checkbox, Radio, Switch, DatePicker, TimePicker,
   Tabs, TabPane, Table, TableColumn, Descriptions, DescriptionsItem, Icon, Tooltip, Alert, Tag,
   Option, Avatar, Image, Skeleton, Divider, Calendar, Carousel, CarouselItem, Rate, Autocomplete, Popover, Pagination,
-  Badge, Upload, CollapseItem, Collapse, Loading, RadioGroup, RadioButton, Cascader, CascaderPanel
+  Badge, Upload, CollapseItem, Collapse, RadioGroup, RadioButton, Cascader, CascaderPanel, Loading
 } from 'element-ui'
 
 new Vue({
@@ -28,6 +29,8 @@ Vue.prototype.$http = http
 Vue.prototype.$message = Message;
 
 //注册使用ElementUI
+Vue.use(Loading)
+Vue.use(MessageBox)
 Vue.use(CascaderPanel)
 Vue.use(Cascader)
 Vue.use(RadioGroup)
