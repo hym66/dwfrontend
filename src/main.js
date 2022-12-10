@@ -91,4 +91,4 @@ Vue.use(CollapseItem);
 Vue.use(Collapse);
 
 // import Axios from 'axios'
-// Axios.defaults.baseURL = '/'
+// Axios.defaults.baseURL = 'edb4-2001-da8-8002-6bd1-7df7-ae3a-6bc7-f240.ap.ngrok.io'

@@ -23,10 +23,10 @@ module.exports = {
     // hotOnly: false, // 热更新
     proxy: {
       "/API": {
-        target: "https://8e0f-180-160-38-49.ap.ngrok.io/", // 目标代理接口地址
+        target: "https://edb4-2001-da8-8002-6bd1-7df7-ae3a-6bc7-f240.ap.ngrok.io", // 目标代理接口地址
         secure: false,
         changeOrigin: true, // 开启代理，在本地创建一个虚拟服务端
-        //ws: true, // 是否启用websockets
+        ws: true, // 是否启用websockets
         pathRewrite: {
           "^/API": ''
         }
