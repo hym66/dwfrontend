@@ -9,7 +9,7 @@ module.exports = {
   // productionSourceMap: !IS_PROD, // 生产环境的 source map
   // parallel: require("os").cpus().length > 1,
   // pwa: {},
-
+  lintOnSave: false,
 
   devServer: {
     // overlay: { // 让浏览器 overlay 同时显示警告和错误
@@ -22,13 +22,22 @@ module.exports = {
     // https: false,
     // hotOnly: false, // 热更新
     proxy: {
-      "/API": {
-        target: "https://edb4-2001-da8-8002-6bd1-7df7-ae3a-6bc7-f240.ap.ngrok.io", // 目标代理接口地址
+      "/neo4j": {
+        target: "http://localhost:8082/", // 目标代理接口地址
         secure: false,
         changeOrigin: true, // 开启代理，在本地创建一个虚拟服务端
         ws: true, // 是否启用websockets
         pathRewrite: {
-          "^/API": ''
+          "^/neo4j": '/api/neo4j/'
+        }
+      },
+      "/mysql": {
+        target: "http://localhost:8083/", // 目标代理接口地址
+        secure: false,
+        changeOrigin: true, // 开启代理，在本地创建一个虚拟服务端
+        ws: true, // 是否启用websockets
+        pathRewrite: {
+          "^/mysql": '/api/mysql/'
         }
       }
     }

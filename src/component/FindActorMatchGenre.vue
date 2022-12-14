@@ -43,7 +43,7 @@ export default {
   methods: {
     submit() {
       axios
-        .get('/neo4j/findActorMatchGenre', {
+        .get('/api/neo4j/findActorMatchGenre', {
           params: {
             genreTitle: this.genreTitle,
             personNum: this.personNum,

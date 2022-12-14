@@ -38,7 +38,7 @@
     methods: {
       load() {
         axios
-          .get('/neo4j/findOfenActorActor')
+          .get('/api/neo4j/findOfenActorActor')
           .then(({ data }) => {
             this.data = data.data;
             this.time = data.time;

@@ -37,7 +37,7 @@
     methods: {
       load() {
         axios
-          .get('/neo4j/findOfenActorDirector', {
+          .get('/api/neo4j/findOfenActorDirector', {
             params: {},
           })
           .then((response) => {

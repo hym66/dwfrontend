@@ -27,7 +27,7 @@
     methods: {
       submit() {
         axios
-          .get('/neo4j/findStarMovieNum', {
+          .get('/api/neo4j/findStarMovieNum', {
             params: {
               starName: this.starName,
             },

@@ -30,7 +30,7 @@
     methods: {
       submit() {
         axios
-          .get('/neo4j/findMovieById', {
+          .get('/api/neo4j/findMovieById', {
             params: {
               movieId: this.movieId,
             },

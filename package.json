@@ -1,5 +1,5 @@
 {
-  "name": "music",
+  "name": "dwfrontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^1.1.3",
     "core-js": "^3.8.3",
-    "element-ui": "^2.15.10",
+    "element-ui": "^2.15.12",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "vue": "^2.6.14",

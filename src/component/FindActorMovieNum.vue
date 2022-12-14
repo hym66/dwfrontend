@@ -12,9 +12,9 @@
       <p>data:<br></p>
       <p>{{ data }}</p>
     </div>
-  </template>
+</template>
   
-  <script>
+<script>
   import axios from 'axios';
   
   export default {
@@ -28,7 +28,7 @@
     methods: {
       submit() {
         axios
-          .get('/neo4j/findActorMovieNum', {
+          .get('/api/neo4j/findActorMovieNum', {
             params: {
               actorName: this.actorName,
             },
@@ -43,4 +43,4 @@
       },
     },
   };
-  </script>
+</script>

@@ -31,7 +31,7 @@ export default {
   methods: {
     submit() {
       axios
-        .get('/neo4j/findGenreMovieSum', {
+        .get('/api/neo4j/findGenreMovieSum', {
           params: {
             genreTitle: this.genreTitle,
           },
