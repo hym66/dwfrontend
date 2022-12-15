@@ -1,51 +1,87 @@
 {
-  "name": "dwfrontend",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-admin-template",
+  "version": "4.4.0",
+  "description": "A vue admin template with Element UI & axios & iconfont & permission control & lint",
+  "author": "Pan <panfree23@gmail.com>",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vue-cli-service serve",
+    "build:prod": "vue-cli-service build",
+    "build:stage": "vue-cli-service build --mode staging",
+    "preview": "node build/index.js --preview",
+    "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
+    "lint": "eslint --ext .js,.vue src",
+    "test:unit": "jest --clearCache && vue-cli-service test:unit",
+    "test:ci": "npm run lint && npm run test:unit"
   },
   "dependencies": {
-    "axios": "^1.1.3",
-    "core-js": "^3.8.3",
-    "element-ui": "^2.15.12",
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@fullcalendar/core": "^5.11.3",
+    "@fullcalendar/daygrid": "^5.11.3",
+    "@fullcalendar/interaction": "^5.11.3",
+    "@fullcalendar/list": "^5.11.3",
+    "@fullcalendar/resource-timeline": "^5.11.3",
+    "@fullcalendar/timegrid": "^5.11.3",
+    "@fullcalendar/vue": "^5.11.2",
+    "animate.css": "^4.1.1",
+    "axios": "0.18.1",
+    "core-js": "3.6.5",
+    "echarts": "^5.4.0",
+    "element-china-area-data": "^5.0.2",
+    "element-ui": "2.15.12",
+    "file-saver": "^2.0.5",
+    "jquery": "^3.6.1",
+    "js-cookie": "2.2.0",
+    "lemon-imui": "^1.7.6",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
-    "vue": "^2.6.14",
-    "vue-jsonp": "^2.0.0",
-    "vuex": "^4.1.0"
+    "lunar-javascript": "^1.2.36",
+    "moment": "^2.29.4",
+    "normalize.css": "7.0.0",
+    "nprogress": "0.2.0",
+    "path-to-regexp": "2.4.0",
+    "pinyin": "^3.0.0-alpha.4",
+    "vue": "2.6.10",
+    "vue-amap": "^0.5.10",
+    "vue-kanban": "^1.8.0",
+    "vue-poll": "^0.1.8",
+    "vue-router": "3.0.6",
+    "vuedraggable": "^2.24.3",
+    "vuex": "3.1.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "babel-plugin-component": "^1.1.1",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "vue-cli-plugin-element": "^1.0.1",
-    "vue-template-compiler": "^2.6.14"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
+    "@vue/cli-plugin-babel": "4.4.4",
+    "@vue/cli-plugin-eslint": "4.4.4",
+    "@vue/cli-plugin-unit-jest": "4.4.4",
+    "@vue/cli-service": "4.4.4",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "autoprefixer": "9.5.1",
+    "babel-eslint": "10.1.0",
+    "babel-jest": "23.6.0",
+    "babel-plugin-dynamic-import-node": "2.3.3",
+    "chalk": "2.4.2",
+    "connect": "3.6.6",
+    "eslint": "6.7.2",
+    "eslint-plugin-vue": "6.2.2",
+    "html-webpack-plugin": "3.2.0",
+    "mockjs": "1.0.1-beta3",
+    "node-sass": "^6.0.1",
+    "runjs": "4.3.2",
+    "sass": "1.26.8",
+    "sass-loader": "^10.2.0",
+    "script-ext-html-webpack-plugin": "2.1.3",
+    "serve-static": "1.13.2",
+    "svg-sprite-loader": "4.1.3",
+    "svgo": "1.2.2",
+    "vue-template-compiler": "2.6.10"
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "last 2 versions"
+  ],
+  "engines": {
+    "node": ">=8.9",
+    "npm": ">= 3.0.0"
+  },
+  "license": "MIT"
 }
