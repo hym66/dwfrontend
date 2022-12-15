@@ -12,6 +12,13 @@ Vue.use(VueAMap);
 //引入iconfont
 import '@/assets/css/icon/iconfont.css'
 
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+
+//引入V-chart
+import VCharts from 'v-charts'
+Vue.use(VCharts)
+
 
 //初始化
 VueAMap.initAMapApiLoader({

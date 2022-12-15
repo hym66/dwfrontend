@@ -62,6 +62,18 @@ export const constantRoutes = [
     ],
   },
   {
+    path: '/compare',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'compare',
+        component: () => import('@/views/compare/index'),
+        meta: { title: '性能比较', icon: 'schedule' }
+      }
+    ],
+  },
+  {
     path: '/complex',
     component: Layout,
     children: [

@@ -5,7 +5,7 @@
       <el-col :span="12">
         <el-form ref="form" :model="form" label-width="120px" style="padding-top: 10vh;">
           <el-form-item label="电影名称">
-            <el-autocomplete
+            <el-input
               v-model="form.name"
               :fetch-suggestions="movieSearchSuggest"
               placeholder="请输入内容"
@@ -19,7 +19,7 @@
           <el-row>
             <el-col :span="13">
               <el-form-item label="电影类别">
-                <el-select
+                <el-input
                   v-model="form.category"
                   filterable
                   remote
@@ -28,17 +28,7 @@
                   :remote-method="categoryRemoteSearch"
                   :loading="categoryLoading"
                 >
-                  <el-option
-                    v-for="item in movieCategory"
-                    :key="item.value"
-                    :label="item.value"
-                    :value="item.value"
-                  />
-                </el-select>
-                <!-- <el-select v-model="form.category" placeholder="请选择电影类别">
-                  <el-option label="Zone one" value="shanghai" />
-                  <el-option label="Zone two" value="beijing" />
-                </el-select> -->
+                </el-input>
               </el-form-item>
             </el-col>
             <el-col :span="16">
@@ -52,7 +42,7 @@
                   start-placeholder="开始日期"
                   end-placeholder="结束日期"
                   :picker-options="pickerOptions"
-                  style="width: 80%;"
+                  style="width: 100%;"
                 />
               </el-form-item>
             </el-col>
@@ -71,7 +61,7 @@
             >
               {{ tag }}
             </el-tag>
-            <el-autocomplete
+            <el-input
               v-if="directorInputVisible"
               ref="saveDirectorTagInput"
               v-model="directorInputValue"
@@ -85,15 +75,6 @@
               @keyup.enter.native="handleDirectorInputConfirm(true)"
               @select="handleDirectorSelect"
             />
-            <!-- <el-input
-                class="input-new-tag"
-                v-if="directorInputVisible"
-                v-model="directorInputValue"
-                ref="saveDirectorTagInput"
-                size="small"
-                @keyup.enter.native="handleDirectorInputConfirm"
-                @blur="handleDirectorInputConfirm"
-              > -->
 
             <el-button
               v-if="!directorInputVisible && form.movieDirectors.length<5"
@@ -118,7 +99,7 @@
             >
               {{ tag }}
             </el-tag>
-            <el-autocomplete
+            <el-input
               v-if="mainActorInputVisible"
               ref="saveMainActorTagInput"
               v-model="mainActorInputValue"
@@ -131,16 +112,7 @@
               @keyup.enter.native="handleMainActorInputConfirm"
               @select="handleMainActorSelect"
             />
-            <!-- <el-input
-                class="input-new-tag"
-                v-if="mainActorInputVisible"
-                v-model="mainActorInputValue"
-                ref="saveMainActorTagInput"
-                size="small"
-                @keyup.enter.native="handleMainActorInputConfirm"
-                @blur="handleMainActorInputConfirm"
-              >
-              </el-input> -->
+
             <el-button
               v-if="!mainActorInputVisible && form.movieMainActors.length<5"
               class="button-new-tag"
@@ -165,7 +137,7 @@
             >
               {{ tag }}
             </el-tag>
-            <el-autocomplete
+            <el-input
               v-if="actorInputVisible"
               ref="saveActorTagInput"
               v-model="actorInputValue"
@@ -229,63 +201,16 @@
             <el-table v-loading="movieLoading" height="460" border stripe :data="movieData" style="width: 100%">
               <el-table-column type="expand">
                 <template slot-scope="props">
-                  <el-form label-position="left" inline class="demo-table-expand">
-                    <!-- <el-form-item>
-                        <el-image src="https://m.media-amazon.com/images/I/81nbTAZ-p3S._SL1500_.jpg"
-                        style="width: 30%;">
-                        </el-image>
-                        </el-form-item> -->
-                    <el-form-item label="asin">
-                      <span>{{ props.row.asin }}</span>
-                    </el-form-item>
-                    <el-form-item label="名称">
-                      <span>{{ props.row.title }}</span>
-                    </el-form-item>
-                    <el-form-item label="版本">
-                      <span>{{ props.row.edition }}</span>
-                    </el-form-item>
-                    <el-form-item label="格式">
-                      <span>{{ props.row.format }}</span>
-                    </el-form-item>
-                    <el-form-item label="上映时间">
-                      <span>{{ props.row.time }}</span>
-                    </el-form-item>
-                    <el-form-item label="正面评价">
-                      <span>{{ props.row.positive }}</span>
-                    </el-form-item>
-                    <el-form-item label="负面评价">
-                      <span>{{ props.row.negative }}</span>
-                    </el-form-item>
-                    <el-form-item v-if="props.row.director.length!==0" label="导演">
-                      <span v-for="i in props.row.director">{{ i }}, </span>
-                    </el-form-item>
-                    <el-form-item v-if="props.row.mainActor.length!==0" label="主演">
-                      <span v-for="i in props.row.mainActor">{{ i }}, </span>
-                    </el-form-item>
-                    <el-form-item v-if="props.row.actor.length!==0" label="演员">
-                      <span v-for="i in props.row.actor">{{ i }}, </span>
-                    </el-form-item>
-                    <el-form-item label="评分">
-                      <span>{{ props.row.score }}</span>
-                    </el-form-item>
-                    <el-form-item label="评论数量">
-                      <span>{{ props.row.commentNum }}</span>
-                    </el-form-item>
-                  </el-form>
                 </template>
               </el-table-column>
               <el-table-column prop="asin" label="编号" width="120" />
               <el-table-column prop="title" label="名称" width="250" />
-              <el-table-column prop="time" label="上映时间" />
 
             </el-table>
 
           </el-tab-pane>
-          <!-- <el-tab-pane label="数据血缘" name="second">
-            配置管理
-          </el-tab-pane> -->
           <el-tab-pane label="速度对比" name="third" 
-          :disabled="!graphReady ||  !distributeReady || !relationReady">
+          :disabled="false">
 
             <ve-histogram
               class="myve"
@@ -344,7 +269,6 @@ export default {
       hasResult:false,
       form: {
         name: '',
-        region: '',
         delivery: false,
         type: [],
         resource: '',
@@ -439,8 +363,7 @@ export default {
         extend: {
           title:{
             show:true,
-            text:'检索电影',
-            subtext:'通过关系型数据库MySql、分布式数据库Hive和图数据库Neo4j分别检索电影的速度对比',
+            text:'电影组合查询',
             // textAlign:'center',
           },
           // 图标顶部的标题及按钮
@@ -559,9 +482,9 @@ export default {
       chartData: {
         columns: ["type","speed"],
         rows: [
-          { "type":"关系型数据库","software": "mysql", "speed": 0 },
-          { "type":"分布式数据库","software": "hive", "speed": 0 },
-          { "type":"图数据库","software": "neo4j", "speed": 0 },
+          { "type":"关系型数据库","software": "mysql", "speed": 3 },
+          { "type":"分布式数据库","software": "hive", "speed": 3 },
+          { "type":"图数据库","software": "neo4j", "speed": 3 },
         ],
       },
 
