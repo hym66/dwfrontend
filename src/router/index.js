@@ -57,7 +57,7 @@ export const constantRoutes = [
         path: 'index',
         name: 'requests',
         component: () => import('@/views/requests/index'),
-        meta: { title: '查询测试', icon: 'schedule' }
+        meta: { title: '单查询测试', icon: 'schedule' }
       }
     ],
   },
