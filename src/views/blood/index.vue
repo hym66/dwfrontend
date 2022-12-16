@@ -83,19 +83,6 @@ export default {
       //searching
       searchingTitle: "",
 
-
-
-      data:{
-        movieTitle: "Harry Potter",
-        genreTitle: null,
-        startTime: new Date(),
-        endTime: new Date(),
-        directorList: ['Tom', 'Tim'],
-        starList: null,
-        actorList: ['Tom', 'Tim'],
-        minScore: 2.2,
-        maxScore: 4.5
-      }
     }
   },
   methods: {

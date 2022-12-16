@@ -37,11 +37,11 @@
       inputLabel1="电影种类" param1="genreTitle"
       outputLabel="该种类的电影数量"/>
 
-      <ListBox url='/neo4j/findOftenActorActor' title="图数据库：查询经常合作的演员" 
+      <!-- <ListBox url='/neo4j/findOftenActorActor' title="图数据库：查询经常合作的演员" 
       outputLabel1="演员名1" outputLabel2="演员名2" outputLabel3="合作次数"
       attr1_0="startPerson" attr1_1="name"
       attr2_0="endPerson" attr2_1="name"
-      attr3_0="cooperateNum"/>
+      attr3_0="cooperateNum"/> -->
 
       <ListBox url='/neo4j/findOftenActorDirector' title="图数据库：查询经常合作的演员和导演" 
       outputLabel1="演员名" outputLabel2="导演名" outputLabel3="合作次数"
