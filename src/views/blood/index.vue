@@ -109,10 +109,6 @@
         <span style="font-size: x-large">{{ selectData.productNum }}</span>
         个版本数量的电影,点击url可访问源网址
       </div>
-      <div style="text-align: center">
-        该电影版本信息来源评论数量共
-        <span style="font-size: x-large">0</span> 条
-      </div>
       <div style="text-align: left;font-size:20px;margin: 20px">以下为未合并前的电影数据信息:</div>
       <el-table
         v-if="visible"
